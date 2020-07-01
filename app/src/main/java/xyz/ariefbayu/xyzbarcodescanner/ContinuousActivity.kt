@@ -18,18 +18,15 @@ import com.journeyapps.barcodescanner.BarcodeResult
 import com.journeyapps.barcodescanner.CaptureManager
 import java.util.*
 import kotlinx.android.synthetic.main.activity_continuous.*
-import kotlinx.android.synthetic.main.activity_continuous.barcodeView
-import kotlinx.android.synthetic.main.activity_continuous.btnScanContinuous
-import kotlinx.android.synthetic.main.activity_continuous.txtResultContinuous
 
 class ContinuousActivity : AppCompatActivity() {
-    lateinit var captureManager: CaptureManager
-    var torchState: Boolean = false
+    private lateinit var captureManager: CaptureManager
+    private var torchState: Boolean = false
 
-    var scanContinuousState: Boolean = false
-    lateinit var scanContinuousBG: Drawable
+    private var scanContinuousState: Boolean = false
+    private lateinit var scanContinuousBG: Drawable
     lateinit var beepManager: BeepManager
-    lateinit var lastScan: Date
+    private var lastScan = Date()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +41,6 @@ class ContinuousActivity : AppCompatActivity() {
         beepManager.isVibrateEnabled = true
 
         scanContinuousBG = btnScanContinuous.background
-        lastScan = Date()
 
         var callback = object : BarcodeCallback {
             override fun barcodeResult(result: BarcodeResult?) {
