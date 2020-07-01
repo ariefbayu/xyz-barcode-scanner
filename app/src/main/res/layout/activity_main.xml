@@ -8,6 +8,8 @@
         tools:context=".MainActivity">
 
     <TextView
+            app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Scanned Value: "
@@ -18,14 +20,16 @@
             android:layout_height="wrap_content"
             android:text="{{please scan first}}"
             android:id="@+id/txtValue"
+        app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toRightOf="@id/txtValueLabel"
     />
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnScan"
+            android:id="@+id/btnScanMe"
             android:text="Scan"
-            app:layout_constraintTop_toBottomOf="@id/txtValueLabel"
+        app:layout_constraintBottom_toBottomOf="@id/txtValueLabel"
+        app:layout_constraintStart_toStartOf="parent"
     />
 
 </android.support.constraint.ConstraintLayout>

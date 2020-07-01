@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnScan.setOnClickListener {
+        btnScanMe.setOnClickListener {
             run {
                 IntentIntegrator(this@MainActivity).initiateScan();
             }
